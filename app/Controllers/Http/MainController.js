@@ -5,7 +5,7 @@ var browser = ''
 var page = ''
 class MainController {
     async main() {
-        setInterval(() => {
+        setInterval(async () => {
             try {
 
                 browser = await puppeteer.launch({
