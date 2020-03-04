@@ -1,0 +1,5 @@
+name: freebitcoin
+image: okteto/node:10
+command:
+- bash
+workdir: /usr/src/app
