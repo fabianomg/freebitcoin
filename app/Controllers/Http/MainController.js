@@ -78,9 +78,9 @@ class MainController {
 
                 await page.goto('https://freebitco.in/?op=home', { timeout: 200000, waitUntil: 'networkidle0' });
                 await page.evaluate(() => {
-                    //document.querySelector('input[id=free_play_form_button]').click();
+                    document.querySelector('input[id=free_play_form_button]').click();
                 });
-
+                console.log('setitimeout')
             } catch (error) {
                 console.log(error)
             } finally {
@@ -160,9 +160,9 @@ class MainController {
 
                 await page.goto('https://freebitco.in/?op=home', { timeout: 200000, waitUntil: 'networkidle0' });
                 await page.evaluate(() => {
-                    //document.querySelector('input[id=free_play_form_button]').click();
+                    document.querySelector('input[id=free_play_form_button]').click();
                 });
-
+                console.log('setiinteval')
             } catch (error) {
                 console.log(error)
             } finally {
