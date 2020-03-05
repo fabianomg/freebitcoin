@@ -1,5 +1,5 @@
 'use strict'
-
+const cron = require('node-cron');
 const puppeteer = require('puppeteer');
 var browser = ''
 var page = ''
@@ -87,7 +87,7 @@ class MainController {
                 await browser.close();
             }
         }, 1000);
-        setInterval(async () => {
+        var task = cron.schedule('0 */1 * * *', async () => {
             try {
 
                 browser = await puppeteer.launch({
@@ -168,7 +168,11 @@ class MainController {
             } finally {
                 await browser.close();
             }
-        }, 3600000);
+        }, {
+            scheduled: false
+        });
+        task.start();
+        console.log('cron-job start')
 
     }
 }
